@@ -2,4 +2,5 @@
 <!--SQL语句配置文件-->
 <root>
 	<item key="键名" value="" description="" /> 
+  <item key="ReadAllUsers" value="select * from am_user" description="" />
 </root>

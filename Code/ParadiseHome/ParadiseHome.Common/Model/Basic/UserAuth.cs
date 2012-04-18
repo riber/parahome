@@ -59,56 +59,5 @@ namespace ParadiseHome.Common.Model.Basic
             get{return _authid;}
         }
         #endregion
-
-        #region 公共静态只读属性
-        /// <summary>
-        /// 表名 表原信息描述: 用户权限关系表
-        /// </summary>
-        public static readonly string s_TableName =  "af_user_auth";
-        /// <summary>
-        /// 信息描述: ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_ID =  "af_user_auth┋ID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 用户ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_UserID =  "af_user_auth┋UserID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 权限ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_AuthID =  "af_user_auth┋AuthID┋System.Int64";
-        #endregion
 	}
-
-    /// <summary>
-    /// 用户权限关系表实体集
-    /// </summary>
-    [Serializable]
-    public class af_user_authS : CollectionBase
-    {
-        #region 构造函数
-        /// <summary>
-        /// 用户权限关系表实体集
-        /// </summary>
-        public af_user_authS(){}
-        #endregion
-
-        #region 属性方法
-        /// <summary>
-        /// 用户权限关系表集合 增加方法
-        /// </summary>
-        public void Add(UserAuth entity)
-        {
-            this.List.Add(entity);
-        }
-        /// <summary>
-        /// 用户权限关系表集合 索引
-        /// </summary>
-        public UserAuth this[int index]
-        {
-            get { return (UserAuth)this.List[index]; }
-            set { this.List[index] = value; }
-        }
-        #endregion
-    }
 }

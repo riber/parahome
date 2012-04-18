@@ -18,13 +18,13 @@ namespace ParadiseHome.Common.Model.Basic
 	/// </summary>
 	[Description("Primary:ID")]
     [Serializable]
-	public partial class bf_transferlog
+	public partial class Transferlog
 	{
         #region 构造函数
         /// <summary>
         /// 实体 转赠记录表
         /// </summary>
-        public bf_transferlog(){}
+        public Transferlog(){}
         #endregion
 
         #region 私有变量
@@ -95,72 +95,5 @@ namespace ParadiseHome.Common.Model.Basic
             get{return _comment;}
         }
         #endregion
-
-        #region 公共静态只读属性
-        /// <summary>
-        /// 表名 表原信息描述: 转赠记录表
-        /// </summary>
-        public static readonly string s_TableName =  "bf_transferlog";
-        /// <summary>
-        /// 信息描述: ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_ID =  "bf_transferlog┋ID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 转赠福位ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_CellID =  "bf_transferlog┋CellID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 转赠人基本信息ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_FromBasicID =  "bf_transferlog┋FromBasicID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 受赠人基本信息ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_ToBasicID =  "bf_transferlog┋ToBasicID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 转赠时间
-        /// </summary>
-        public static readonly string s_OccurTime =  "bf_transferlog┋OccurTime┋System.DateTime";
-        /// <summary>
-        /// 信息描述: 经办管理员ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_OperatorID =  "bf_transferlog┋OperatorID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 备注
-        /// </summary>
-        public static readonly string s_Comment =  "bf_transferlog┋Comment┋System.String";
-        #endregion
 	}
-
-    /// <summary>
-    /// 转赠记录表实体集
-    /// </summary>
-    [Serializable]
-    public class bf_transferlogS : CollectionBase
-    {
-        #region 构造函数
-        /// <summary>
-        /// 转赠记录表实体集
-        /// </summary>
-        public bf_transferlogS(){}
-        #endregion
-
-        #region 属性方法
-        /// <summary>
-        /// 转赠记录表集合 增加方法
-        /// </summary>
-        public void Add(bf_transferlog entity)
-        {
-            this.List.Add(entity);
-        }
-        /// <summary>
-        /// 转赠记录表集合 索引
-        /// </summary>
-        public bf_transferlog this[int index]
-        {
-            get { return (bf_transferlog)this.List[index]; }
-            set { this.List[index] = value; }
-        }
-        #endregion
-    }
 }

@@ -18,13 +18,13 @@ namespace ParadiseHome.Common.Model.Basic
 	/// </summary>
 	[Description("Primary:ID")]
     [Serializable]
-	public partial class bm_personbasicinfo
+	public partial class Personbasicinfo
 	{
         #region 构造函数
         /// <summary>
         /// 实体 人员基本信息
         /// </summary>
-        public bm_personbasicinfo(){}
+        public Personbasicinfo(){}
         #endregion
 
         #region 私有变量
@@ -122,84 +122,5 @@ namespace ParadiseHome.Common.Model.Basic
             get{return _comment;}
         }
         #endregion
-
-        #region 公共静态只读属性
-        /// <summary>
-        /// 表名 表原信息描述: 人员基本信息
-        /// </summary>
-        public static readonly string s_TableName =  "bm_personbasicinfo";
-        /// <summary>
-        /// 信息描述: ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_ID =  "bm_personbasicinfo┋ID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 姓名(NOT NULL)
-        /// </summary>
-        public static readonly string s_Name =  "bm_personbasicinfo┋Name┋System.String";
-        /// <summary>
-        /// 信息描述: 性别
-        /// </summary>
-        public static readonly string s_Sex =  "bm_personbasicinfo┋Sex┋System.String";
-        /// <summary>
-        /// 信息描述: 民族
-        /// </summary>
-        public static readonly string s_Nationality =  "bm_personbasicinfo┋Nationality┋System.String";
-        /// <summary>
-        /// 信息描述: 籍贯
-        /// </summary>
-        public static readonly string s_Origin =  "bm_personbasicinfo┋Origin┋System.String";
-        /// <summary>
-        /// 信息描述: 家庭地址
-        /// </summary>
-        public static readonly string s_Address =  "bm_personbasicinfo┋Address┋System.String";
-        /// <summary>
-        /// 信息描述: 身份证号
-        /// </summary>
-        public static readonly string s_IDNumber =  "bm_personbasicinfo┋IDNumber┋System.String";
-        /// <summary>
-        /// 信息描述: 出生日期
-        /// </summary>
-        public static readonly string s_BirthDay =  "bm_personbasicinfo┋BirthDay┋System.DateTime";
-        /// <summary>
-        /// 信息描述: 联系电话
-        /// </summary>
-        public static readonly string s_ContactNumber =  "bm_personbasicinfo┋ContactNumber┋System.String";
-        /// <summary>
-        /// 信息描述: 备注
-        /// </summary>
-        public static readonly string s_Comment =  "bm_personbasicinfo┋Comment┋System.String";
-        #endregion
 	}
-
-    /// <summary>
-    /// 人员基本信息实体集
-    /// </summary>
-    [Serializable]
-    public class bm_personbasicinfoS : CollectionBase
-    {
-        #region 构造函数
-        /// <summary>
-        /// 人员基本信息实体集
-        /// </summary>
-        public bm_personbasicinfoS(){}
-        #endregion
-
-        #region 属性方法
-        /// <summary>
-        /// 人员基本信息集合 增加方法
-        /// </summary>
-        public void Add(bm_personbasicinfo entity)
-        {
-            this.List.Add(entity);
-        }
-        /// <summary>
-        /// 人员基本信息集合 索引
-        /// </summary>
-        public bm_personbasicinfo this[int index]
-        {
-            get { return (bm_personbasicinfo)this.List[index]; }
-            set { this.List[index] = value; }
-        }
-        #endregion
-    }
 }

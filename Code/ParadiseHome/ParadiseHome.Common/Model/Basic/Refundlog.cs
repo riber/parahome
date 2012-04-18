@@ -18,13 +18,13 @@ namespace ParadiseHome.Common.Model.Basic
 	/// </summary>
 	[Description("Primary:ID")]
     [Serializable]
-	public partial class bf_refundlog
+	public partial class Refundlog
 	{
         #region 构造函数
         /// <summary>
         /// 实体 退款记录表
         /// </summary>
-        public bf_refundlog(){}
+        public Refundlog(){}
         #endregion
 
         #region 私有变量
@@ -86,68 +86,5 @@ namespace ParadiseHome.Common.Model.Basic
             get{return _comment;}
         }
         #endregion
-
-        #region 公共静态只读属性
-        /// <summary>
-        /// 表名 表原信息描述: 退款记录表
-        /// </summary>
-        public static readonly string s_TableName =  "bf_refundlog";
-        /// <summary>
-        /// 信息描述: ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_ID =  "bf_refundlog┋ID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 关联的捐赠记录表ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_PurchaseLogID =  "bf_refundlog┋PurchaseLogID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 退款时间
-        /// </summary>
-        public static readonly string s_RefundTime =  "bf_refundlog┋RefundTime┋System.DateTime";
-        /// <summary>
-        /// 信息描述: 退款金额
-        /// </summary>
-        public static readonly string s_RefundPrice =  "bf_refundlog┋RefundPrice┋System.Single";
-        /// <summary>
-        /// 信息描述: 经办管理员ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_OperatorID =  "bf_refundlog┋OperatorID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 备注
-        /// </summary>
-        public static readonly string s_Comment =  "bf_refundlog┋Comment┋System.String";
-        #endregion
 	}
-
-    /// <summary>
-    /// 退款记录表实体集
-    /// </summary>
-    [Serializable]
-    public class bf_refundlogS : CollectionBase
-    {
-        #region 构造函数
-        /// <summary>
-        /// 退款记录表实体集
-        /// </summary>
-        public bf_refundlogS(){}
-        #endregion
-
-        #region 属性方法
-        /// <summary>
-        /// 退款记录表集合 增加方法
-        /// </summary>
-        public void Add(bf_refundlog entity)
-        {
-            this.List.Add(entity);
-        }
-        /// <summary>
-        /// 退款记录表集合 索引
-        /// </summary>
-        public bf_refundlog this[int index]
-        {
-            get { return (bf_refundlog)this.List[index]; }
-            set { this.List[index] = value; }
-        }
-        #endregion
-    }
 }

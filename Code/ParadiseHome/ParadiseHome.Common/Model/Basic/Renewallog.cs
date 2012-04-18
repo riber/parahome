@@ -18,13 +18,13 @@ namespace ParadiseHome.Common.Model.Basic
 	/// </summary>
 	[Description("Primary:ID")]
     [Serializable]
-	public partial class bf_renewallog
+	public partial class Renewallog
 	{
         #region 构造函数
         /// <summary>
         /// 实体 续费记录表
         /// </summary>
-        public bf_renewallog(){}
+        public Renewallog(){}
         #endregion
 
         #region 私有变量
@@ -86,68 +86,5 @@ namespace ParadiseHome.Common.Model.Basic
             get{return _comment;}
         }
         #endregion
-
-        #region 公共静态只读属性
-        /// <summary>
-        /// 表名 表原信息描述: 续费记录表
-        /// </summary>
-        public static readonly string s_TableName =  "bf_renewallog";
-        /// <summary>
-        /// 信息描述: ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_ID =  "bf_renewallog┋ID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 关联的捐赠记录表ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_PurchaseLogID =  "bf_renewallog┋PurchaseLogID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 续费时间
-        /// </summary>
-        public static readonly string s_RenewalTime =  "bf_renewallog┋RenewalTime┋System.DateTime";
-        /// <summary>
-        /// 信息描述: 续费金额
-        /// </summary>
-        public static readonly string s_RenewalPrice =  "bf_renewallog┋RenewalPrice┋System.Single";
-        /// <summary>
-        /// 信息描述: 经办管理员ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_OperatorID =  "bf_renewallog┋OperatorID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 备注
-        /// </summary>
-        public static readonly string s_Comment =  "bf_renewallog┋Comment┋System.String";
-        #endregion
 	}
-
-    /// <summary>
-    /// 续费记录表实体集
-    /// </summary>
-    [Serializable]
-    public class bf_renewallogS : CollectionBase
-    {
-        #region 构造函数
-        /// <summary>
-        /// 续费记录表实体集
-        /// </summary>
-        public bf_renewallogS(){}
-        #endregion
-
-        #region 属性方法
-        /// <summary>
-        /// 续费记录表集合 增加方法
-        /// </summary>
-        public void Add(bf_renewallog entity)
-        {
-            this.List.Add(entity);
-        }
-        /// <summary>
-        /// 续费记录表集合 索引
-        /// </summary>
-        public bf_renewallog this[int index]
-        {
-            get { return (bf_renewallog)this.List[index]; }
-            set { this.List[index] = value; }
-        }
-        #endregion
-    }
 }

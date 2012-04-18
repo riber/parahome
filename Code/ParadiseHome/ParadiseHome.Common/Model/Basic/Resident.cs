@@ -18,13 +18,13 @@ namespace ParadiseHome.Common.Model.Basic
 	/// </summary>
 	[Description("Primary:ID")]
     [Serializable]
-	public partial class bm_resident
+	public partial class Resident
 	{
         #region 构造函数
         /// <summary>
         /// 实体 福位使用者
         /// </summary>
-        public bm_resident(){}
+        public Resident(){}
         #endregion
 
         #region 私有变量
@@ -122,84 +122,5 @@ namespace ParadiseHome.Common.Model.Basic
             get{return _comment;}
         }
         #endregion
-
-        #region 公共静态只读属性
-        /// <summary>
-        /// 表名 表原信息描述: 福位使用者
-        /// </summary>
-        public static readonly string s_TableName =  "bm_resident";
-        /// <summary>
-        /// 信息描述: ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_ID =  "bm_resident┋ID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 基本信息ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_BasicInfoID =  "bm_resident┋BasicInfoID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 福位ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_CellID =  "bm_resident┋CellID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 往生时间
-        /// </summary>
-        public static readonly string s_DeathDay =  "bm_resident┋DeathDay┋System.DateTime";
-        /// <summary>
-        /// 信息描述: 入住时间
-        /// </summary>
-        public static readonly string s_CheckInDay =  "bm_resident┋CheckInDay┋System.DateTime";
-        /// <summary>
-        /// 信息描述: 捐赠者ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_PurchaserBasicID =  "bm_resident┋PurchaserBasicID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 与捐赠者关系
-        /// </summary>
-        public static readonly string s_RelationWithPurchaser =  "bm_resident┋RelationWithPurchaser┋System.String";
-        /// <summary>
-        /// 信息描述: 生平
-        /// </summary>
-        public static readonly string s_LiftTimeIntro =  "bm_resident┋LiftTimeIntro┋System.String";
-        /// <summary>
-        /// 信息描述: 照片路径
-        /// </summary>
-        public static readonly string s_ImagePath =  "bm_resident┋ImagePath┋System.String";
-        /// <summary>
-        /// 信息描述: 备注
-        /// </summary>
-        public static readonly string s_Comment =  "bm_resident┋Comment┋System.String";
-        #endregion
 	}
-
-    /// <summary>
-    /// 福位使用者实体集
-    /// </summary>
-    [Serializable]
-    public class bm_residentS : CollectionBase
-    {
-        #region 构造函数
-        /// <summary>
-        /// 福位使用者实体集
-        /// </summary>
-        public bm_residentS(){}
-        #endregion
-
-        #region 属性方法
-        /// <summary>
-        /// 福位使用者集合 增加方法
-        /// </summary>
-        public void Add(bm_resident entity)
-        {
-            this.List.Add(entity);
-        }
-        /// <summary>
-        /// 福位使用者集合 索引
-        /// </summary>
-        public bm_resident this[int index]
-        {
-            get { return (bm_resident)this.List[index]; }
-            set { this.List[index] = value; }
-        }
-        #endregion
-    }
 }

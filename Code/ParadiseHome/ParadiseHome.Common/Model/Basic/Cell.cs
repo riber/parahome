@@ -18,19 +18,22 @@ namespace ParadiseHome.Common.Model.Basic
 	/// </summary>
 	[Description("Primary:ID")]
     [Serializable]
-	public partial class bm_cell
+	public partial class Cell
 	{
         #region 构造函数
         /// <summary>
         /// 实体 福位或者住所
         /// </summary>
-        public bm_cell(){}
+        public Cell(){}
         #endregion
 
         #region 私有变量
         private long _id = long.MinValue;
         private long _locationid = long.MinValue;
         private string _celltag = null;
+        private int _x = int.MinValue;
+        private int _y = int.MinValue;
+        private int _z = int.MinValue;
         private float _currentprice = float.MinValue;
         private string _state = null;
         private string _comment = null;
@@ -61,6 +64,21 @@ namespace ParadiseHome.Common.Model.Basic
             set{ _celltag=value;}
             get{return _celltag;}
         }
+        public int X
+        {
+            get { return _x; }
+            set { _x = value; }
+        }
+        public int Y
+        {
+            get { return _y; }
+            set { _y = value; }
+        }
+        public int Z
+        {
+            get { return _z; }
+            set { _z = value; }
+        }
         /// <summary>
         /// 当前价格
         /// </summary>
@@ -86,68 +104,5 @@ namespace ParadiseHome.Common.Model.Basic
             get{return _comment;}
         }
         #endregion
-
-        #region 公共静态只读属性
-        /// <summary>
-        /// 表名 表原信息描述: 福位或者住所
-        /// </summary>
-        public static readonly string s_TableName =  "bm_cell";
-        /// <summary>
-        /// 信息描述: ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_ID =  "bm_cell┋ID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 位置ID(NOT NULL)
-        /// </summary>
-        public static readonly string s_LocationID =  "bm_cell┋LocationID┋System.Int64";
-        /// <summary>
-        /// 信息描述: 福位标识符
-        /// </summary>
-        public static readonly string s_CellTag =  "bm_cell┋CellTag┋System.String";
-        /// <summary>
-        /// 信息描述: 当前价格
-        /// </summary>
-        public static readonly string s_CurrentPrice =  "bm_cell┋CurrentPrice┋System.Single";
-        /// <summary>
-        /// 信息描述: 福位所处的状态
-        /// </summary>
-        public static readonly string s_State =  "bm_cell┋State┋System.String";
-        /// <summary>
-        /// 信息描述: 备注
-        /// </summary>
-        public static readonly string s_Comment =  "bm_cell┋Comment┋System.String";
-        #endregion
 	}
-
-    /// <summary>
-    /// 福位或者住所实体集
-    /// </summary>
-    [Serializable]
-    public class bm_cellS : CollectionBase
-    {
-        #region 构造函数
-        /// <summary>
-        /// 福位或者住所实体集
-        /// </summary>
-        public bm_cellS(){}
-        #endregion
-
-        #region 属性方法
-        /// <summary>
-        /// 福位或者住所集合 增加方法
-        /// </summary>
-        public void Add(bm_cell entity)
-        {
-            this.List.Add(entity);
-        }
-        /// <summary>
-        /// 福位或者住所集合 索引
-        /// </summary>
-        public bm_cell this[int index]
-        {
-            get { return (bm_cell)this.List[index]; }
-            set { this.List[index] = value; }
-        }
-        #endregion
-    }
 }

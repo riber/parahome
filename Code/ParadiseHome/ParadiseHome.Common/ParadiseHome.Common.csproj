@@ -41,22 +41,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Basic\UserAuth.cs" />
-    <Compile Include="Model\Basic\am_authority.cs" />
-    <Compile Include="Model\Basic\am_department.cs" />
-    <Compile Include="Model\Basic\am_sysconfig.cs" />
+    <Compile Include="Model\Basic\Authority.cs" />
+    <Compile Include="Model\Basic\Department.cs" />
+    <Compile Include="Model\Basic\Sysconfig.cs" />
     <Compile Include="Model\Basic\User.cs" />
-    <Compile Include="Model\Basic\bf_checkinlog.cs" />
-    <Compile Include="Model\Basic\bf_purchaselog.cs" />
-    <Compile Include="Model\Basic\bf_refundlog.cs" />
-    <Compile Include="Model\Basic\bf_renewallog.cs" />
-    <Compile Include="Model\Basic\bf_transferlog.cs" />
-    <Compile Include="Model\Basic\bm_cell.cs" />
-    <Compile Include="Model\Basic\bm_introducer.cs" />
-    <Compile Include="Model\Basic\bm_location.cs" />
-    <Compile Include="Model\Basic\bm_locationtype.cs" />
-    <Compile Include="Model\Basic\bm_personbasicinfo.cs" />
-    <Compile Include="Model\Basic\bm_purchaser.cs" />
-    <Compile Include="Model\Basic\bm_resident.cs" />
+    <Compile Include="Model\Basic\Checkinlog.cs" />
+    <Compile Include="Model\Basic\Purchaselog.cs" />
+    <Compile Include="Model\Basic\Refundlog.cs" />
+    <Compile Include="Model\Basic\Renewallog.cs" />
+    <Compile Include="Model\Basic\Transferlog.cs" />
+    <Compile Include="Model\Basic\Cell.cs" />
+    <Compile Include="Model\Basic\Introducer.cs" />
+    <Compile Include="Model\Basic\Location.cs" />
+    <Compile Include="Model\Basic\Locationtype.cs" />
+    <Compile Include="Model\Basic\Personbasicinfo.cs" />
+    <Compile Include="Model\Basic\Purchaser.cs" />
+    <Compile Include="Model\Basic\Resident.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\ConfigurationHelper.cs" />
     <Compile Include="Utils\EntityConvertor.cs" />

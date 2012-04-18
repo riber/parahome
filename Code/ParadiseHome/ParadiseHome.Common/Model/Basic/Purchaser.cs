@@ -1,5 +1,5 @@
 ﻿/******************************************
-* 模块名称：实体 用户信息表
+* 模块名称：实体 购买者或福位捐献者
 * 当前版本：1.0
 * 开发人员：Administrator
 * 生成时间：2012-4-17
@@ -14,25 +14,24 @@ using System.ComponentModel;
 namespace ParadiseHome.Common.Model.Basic
 {
 	/// <summary>
-	/// 实体 用户信息表
+	/// 实体 购买者或福位捐献者
 	/// </summary>
 	[Description("Primary:ID")]
     [Serializable]
-	public partial class User
+	public partial class Purchaser
 	{
         #region 构造函数
         /// <summary>
-        /// 实体 用户信息表
+        /// 实体 购买者或福位捐献者
         /// </summary>
-        public User(){}
+        public Purchaser(){}
         #endregion
 
         #region 私有变量
         private long _id = long.MinValue;
-        private long _departmentid = long.MinValue;
         private long _basicinfoid = long.MinValue;
-        private string _username = null;
-        private string _password = null;
+        private string _contactname = null;
+        private string _contactphone = null;
         private string _comment = null;
         #endregion
 
@@ -46,15 +45,7 @@ namespace ParadiseHome.Common.Model.Basic
             get{return _id;}
         }
         /// <summary>
-        /// 组织ID(NOT NULL)
-        /// </summary>
-        public long DepartmentID
-        {
-            set{ _departmentid=value;}
-            get{return _departmentid;}
-        }
-        /// <summary>
-        /// 基本信息表ID(NOT NULL)
+        /// 基本信息ID(NOT NULL)
         /// </summary>
         public long BasicInfoID
         {
@@ -62,20 +53,20 @@ namespace ParadiseHome.Common.Model.Basic
             get{return _basicinfoid;}
         }
         /// <summary>
-        /// 用户名(NOT NULL)
+        /// 应急联系人姓名
         /// </summary>
-        public string UserName
+        public string ContactName
         {
-            set{ _username=value;}
-            get{return _username;}
+            set{ _contactname=value;}
+            get{return _contactname;}
         }
         /// <summary>
-        /// 密码(NOT NULL)
+        /// 应急联系人电话
         /// </summary>
-        public string Password
+        public string ContactPhone
         {
-            set{ _password=value;}
-            get{return _password;}
+            set{ _contactphone=value;}
+            get{return _contactphone;}
         }
         /// <summary>
         /// 备注

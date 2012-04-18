@@ -1,5 +1,5 @@
 ﻿/******************************************
-* 模块名称：实体 用户信息表
+* 模块名称：实体 位置结点信息表
 * 当前版本：1.0
 * 开发人员：Administrator
 * 生成时间：2012-4-17
@@ -14,25 +14,24 @@ using System.ComponentModel;
 namespace ParadiseHome.Common.Model.Basic
 {
 	/// <summary>
-	/// 实体 用户信息表
+	/// 实体 位置结点信息表
 	/// </summary>
 	[Description("Primary:ID")]
     [Serializable]
-	public partial class User
+	public partial class Location
 	{
         #region 构造函数
         /// <summary>
-        /// 实体 用户信息表
+        /// 实体 位置结点信息表
         /// </summary>
-        public User(){}
+        public Location(){}
         #endregion
 
         #region 私有变量
         private long _id = long.MinValue;
-        private long _departmentid = long.MinValue;
-        private long _basicinfoid = long.MinValue;
-        private string _username = null;
-        private string _password = null;
+        private long _locationtypeid = long.MinValue;
+        private long _parentlocationid = long.MinValue;
+        private string _name = null;
         private string _comment = null;
         #endregion
 
@@ -46,36 +45,28 @@ namespace ParadiseHome.Common.Model.Basic
             get{return _id;}
         }
         /// <summary>
-        /// 组织ID(NOT NULL)
+        /// 位置类型ID(NOT NULL)
         /// </summary>
-        public long DepartmentID
+        public long LocationTypeID
         {
-            set{ _departmentid=value;}
-            get{return _departmentid;}
+            set{ _locationtypeid=value;}
+            get{return _locationtypeid;}
         }
         /// <summary>
-        /// 基本信息表ID(NOT NULL)
+        /// 父节点ID(NOT NULL)
         /// </summary>
-        public long BasicInfoID
+        public long ParentLocationID
         {
-            set{ _basicinfoid=value;}
-            get{return _basicinfoid;}
+            set{ _parentlocationid=value;}
+            get{return _parentlocationid;}
         }
         /// <summary>
-        /// 用户名(NOT NULL)
+        /// 位置节点名称
         /// </summary>
-        public string UserName
+        public string Name
         {
-            set{ _username=value;}
-            get{return _username;}
-        }
-        /// <summary>
-        /// 密码(NOT NULL)
-        /// </summary>
-        public string Password
-        {
-            set{ _password=value;}
-            get{return _password;}
+            set{ _name=value;}
+            get{return _name;}
         }
         /// <summary>
         /// 备注

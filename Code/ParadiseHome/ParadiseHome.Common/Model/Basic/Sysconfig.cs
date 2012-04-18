@@ -1,5 +1,5 @@
 ﻿/******************************************
-* 模块名称：实体 用户信息表
+* 模块名称：实体 系统配置表
 * 当前版本：1.0
 * 开发人员：Administrator
 * 生成时间：2012-4-17
@@ -14,25 +14,23 @@ using System.ComponentModel;
 namespace ParadiseHome.Common.Model.Basic
 {
 	/// <summary>
-	/// 实体 用户信息表
+	/// 实体 系统配置表
 	/// </summary>
 	[Description("Primary:ID")]
     [Serializable]
-	public partial class User
+	public partial class Sysconfig
 	{
         #region 构造函数
         /// <summary>
-        /// 实体 用户信息表
+        /// 实体 系统配置表
         /// </summary>
-        public User(){}
+        public Sysconfig(){}
         #endregion
 
         #region 私有变量
         private long _id = long.MinValue;
-        private long _departmentid = long.MinValue;
-        private long _basicinfoid = long.MinValue;
-        private string _username = null;
-        private string _password = null;
+        private string _key = null;
+        private string _value = null;
         private string _comment = null;
         #endregion
 
@@ -46,36 +44,20 @@ namespace ParadiseHome.Common.Model.Basic
             get{return _id;}
         }
         /// <summary>
-        /// 组织ID(NOT NULL)
+        /// 参数名(NOT NULL)
         /// </summary>
-        public long DepartmentID
+        public string Key
         {
-            set{ _departmentid=value;}
-            get{return _departmentid;}
+            set{ _key=value;}
+            get{return _key;}
         }
         /// <summary>
-        /// 基本信息表ID(NOT NULL)
+        /// 参数值
         /// </summary>
-        public long BasicInfoID
+        public string Value
         {
-            set{ _basicinfoid=value;}
-            get{return _basicinfoid;}
-        }
-        /// <summary>
-        /// 用户名(NOT NULL)
-        /// </summary>
-        public string UserName
-        {
-            set{ _username=value;}
-            get{return _username;}
-        }
-        /// <summary>
-        /// 密码(NOT NULL)
-        /// </summary>
-        public string Password
-        {
-            set{ _password=value;}
-            get{return _password;}
+            set{ _value=value;}
+            get{return _value;}
         }
         /// <summary>
         /// 备注

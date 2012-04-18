@@ -22,21 +22,29 @@ namespace ParadiseHome.Common.Utils
             {
                 if (table.Rows.Count > 0)
                 {
-                    backObjs = new List<Object>();
-                    Assembly asm = Assembly.GetExecutingAssembly();
-                    // 一行对应一个实体
-                    for (int rowIndex = 0; rowIndex < table.Rows.Count; rowIndex++ )
+                    try
                     {
-                        Object obj = asm.CreateInstance(entityType.FullName, true);
-                        // 一列对应实体的一个属性
-                        for (int colIndex = 0; colIndex < table.Columns.Count; colIndex++ )
+                        backObjs = new List<Object>();
+                        Assembly asm = Assembly.GetExecutingAssembly();
+                        // 一行对应一个实体
+                        for (int rowIndex = 0; rowIndex < table.Rows.Count; rowIndex++)
                         {
-                            string caption = table.Columns[colIndex].Caption;
-                            PropertyInfo pinfo = obj.GetType().GetProperty(caption);
-                            pinfo.SetValue(obj, table.Rows[rowIndex].ItemArray[colIndex], null);
+                            Object obj = asm.CreateInstance(entityType.FullName, true);
+                            // 一列对应实体的一个属性
+                            for (int colIndex = 0; colIndex < table.Columns.Count; colIndex++)
+                            {
+                                string caption = table.Columns[colIndex].Caption;
+                                PropertyInfo pinfo = obj.GetType().GetProperty(caption);
+                                pinfo.SetValue(obj, table.Rows[rowIndex].ItemArray[colIndex], null);
+                            }
+                            backObjs.Add(obj);
                         }
-                        backObjs.Add(obj);
                     }
+                    catch
+                    {
+                        return null;
+                    }
+                    
                 }
             }
             return backObjs;
