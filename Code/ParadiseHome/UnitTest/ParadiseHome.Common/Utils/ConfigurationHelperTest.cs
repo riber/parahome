@@ -1,22 +1,18 @@
 ﻿using ParadiseHome.Common.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Data;
 using System.Collections.Generic;
-using ParadiseHome.DAL.MySQL;
-using ParadiseHome.Common.Model.Basic;
-using ParadiseHome.DAL.Interface;
 
 namespace UnitTest
 {
     
     
     /// <summary>
-    ///这是 EntityConvertorTest 的测试类，旨在
-    ///包含所有 EntityConvertorTest 单元测试
+    ///这是 ConfigurationHelperTest 的测试类，旨在
+    ///包含所有 ConfigurationHelperTest 单元测试
     ///</summary>
     [TestClass()]
-    public class EntityConvertorTest
+    public class ConfigurationHelperTest
     {
 
 
@@ -70,20 +66,15 @@ namespace UnitTest
 
 
         /// <summary>
-        ///CreateEntity 的测试
+        ///CreateSQLDictionary 的测试
         ///</summary>
         [TestMethod()]
-        public void CreateEntityTest()
+        [DeploymentItem("ParadiseHome.Common.dll")]
+        public void CreateSQLDictionaryTest()
         {
-            ISQLExecutor exer = ConfigurationHelper.Instance.CreateNewSQLExecutor() as ISQLExecutor;
-            //SQLExecutor exer = new SQLExecutor();
-
-            Type entityType = typeof(User); // TODO: 初始化为适当的值
-            DataTable table = null; // TODO: 初始化为适当的值
-            IList<object> expected = null; // TODO: 初始化为适当的值
-            IList<object> actual;
-            table = exer.Execute("select * from am_user");
-            actual = EntityConvertor.CreateEntity(entityType, table);
+            Dictionary<string, string> expected = null; // TODO: 初始化为适当的值
+            Dictionary<string, string> actual;
+            actual = ConfigurationHelper.Instance.SqlDictionary;
             Assert.AreEqual("", "");
             Assert.Inconclusive("验证此测试方法的正确性。");
         }
