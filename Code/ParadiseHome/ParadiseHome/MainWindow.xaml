@@ -1,21 +1,86 @@
 ﻿<Window x:Class="ParadiseHome.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" Style="{StaticResource ResourceKey=MainWinStyle}" Opacity="0.9">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30" />
+            <RowDefinition Height="60" />
             <RowDefinition Height="30" />
             <RowDefinition />
             <RowDefinition Height="30" />
         </Grid.RowDefinitions>
-        <ToolBar Height="26" HorizontalAlignment="Stretch" Name="toolBar1" VerticalAlignment="Center" Grid.Row="1">
+        <Grid x:Name="headerGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <WrapPanel Name="wrapPanel1" >
+                <Button Name="button2" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Tag="Pages/DemoPage.xaml" Click="NavButton_Click">
+                    <Image Source="/ParadiseHome;component/Images/chinaz1.ico" ToolTip="Tooltip提示信息1"></Image>
+                </Button>
+                <Button Name="button3" Background="{x:Null}" >
+                    <Image Source="/ParadiseHome;component/Images/chinaz2.ico"></Image>
+                </Button>
+            </WrapPanel>
+        </Grid>
+        <ToolBar Height="26" HorizontalAlignment="Stretch" Name="toolBar1" VerticalAlignment="Center" Grid.Row="1" Opacity="0.8">
             <ToolBarOverflowPanel>
-                <Button>
-                    <Image></Image>
+                <Button Background="{x:Null}">
+                    <Image Source="/ParadiseHome;component/Images/chinaz10.ico"></Image>
                 </Button>
             </ToolBarOverflowPanel>
         </ToolBar>
-        <StatusBar Grid.Row="3" Height="23" HorizontalAlignment="Stretch" Name="statusBar1" VerticalAlignment="Bottom" />
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid Width="150" Name="leftMenuContainerGrid" Opacity="0.8">
+                <TreeView Name="treeView1" Width="150" Opacity="0.8">
+                    <TreeView.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFE8E6E6" Offset="0" />
+                            <GradientStop Color="#FFF5BFBF" Offset="1" />
+                        </LinearGradientBrush>
+                    </TreeView.Background>
+                    <TreeViewItem>
+                        <TreeViewItem.Header>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="4*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Source="/ParadiseHome;component/Images/chinaz2.ico" Width="10" Height="10"></Image>
+                                <TextBlock Text="数据中心" Grid.Column="1"></TextBlock>
+                            </Grid>
+                        </TreeViewItem.Header>
+                        <TreeViewItem.Background>
+                            <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                <GradientStop Color="#FF7BDFD5" Offset="0" />
+                                <GradientStop Color="#FFD1F0ED" Offset="1" />
+                            </LinearGradientBrush>
+                        </TreeViewItem.Background>
+                        <TreeViewItem Header="子菜单1" />
+                        <TreeViewItem Header="子菜单2" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="22222222222" />
+                </TreeView>
+            </Grid>
+            <Button x:Name="btnShowOrHideMenu" Grid.Column="1" BorderThickness="0" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Click="btnShowOrHideMenu_Click">
+                <Grid>
+                    <Image Name="imgLeft" Source="/ParadiseHome;component/Images/left_arrow.png" ToolTip="隐藏导航栏"></Image>
+                    <Image Name="imgRight" Source="/ParadiseHome;component/Images/right_arrow.png" Visibility="Collapsed" ToolTip="显示导航栏"></Image>
+                </Grid>
+            </Button>
+            <Frame x:Name="mainFrame" Navigated="mainFrame_Navigated" Grid.Column="2">
+
+            </Frame>
+        </Grid>
+
+
+        <StatusBar Grid.Row="3" HorizontalAlignment="Stretch" Name="statusBar1" VerticalAlignment="Stretch">
+            <StatusBarItem Name="sbiMsg" Padding="0" />
+        </StatusBar>
     </Grid>
 </Window>

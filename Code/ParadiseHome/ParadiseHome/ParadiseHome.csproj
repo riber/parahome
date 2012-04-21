@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Pages\DemoPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Styles\GenericStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -73,6 +77,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\BasePage.cs" />
+    <Compile Include="Pages\DemoPage.xaml.cs">
+      <DependentUpon>DemoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -98,12 +106,26 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
-    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="SQLConfig.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\chinaz1.ico" />
+    <Resource Include="Images\chinaz10.ico" />
+    <Resource Include="Images\chinaz2.ico" />
+    <Resource Include="Images\chinaz3.ico" />
+    <Resource Include="Images\CN-wp1.jpg" />
+    <Resource Include="Images\left_arrow.png" />
+    <Resource Include="Images\right_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ParadiseHome.Common\ParadiseHome.Common.csproj">
+      <Project>{C7932ABB-ED3A-497B-8317-7638291EE3E0}</Project>
+      <Name>ParadiseHome.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
