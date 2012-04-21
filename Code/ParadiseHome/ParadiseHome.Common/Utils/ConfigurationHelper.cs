@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml;
+using System.Reflection;
 
 namespace ParadiseHome.Common.Utils
 {
@@ -31,7 +33,7 @@ namespace ParadiseHome.Common.Utils
         {
             // 构造时一次性初始化
             // 打桩，SQL配置文件地址应该从一个更基础的配置文件来读取
-            _sqlDictionary = CreateSQLDictionary("SQLConfig.xml");
+            CreateSQLDictionary(@"SQLConfig.xml");
         }
         #endregion
 
@@ -70,9 +72,52 @@ namespace ParadiseHome.Common.Utils
         #endregion
 
         #region 私有方法
-        private Dictionary<string, string> CreateSQLDictionary(string configFileName)
+        private void CreateSQLDictionary(string configFileName)
         {
-            
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(configFileName);
+                XmlNodeList nodeList = doc.SelectNodes("/root/item");
+                _sqlDictionary = new Dictionary<string, string>();
+                foreach (XmlNode node in nodeList)
+                {
+                    _sqlDictionary.Add(node.Attributes["key"].Value, node.Attributes["value"].Value);
+                }
+            }
+            catch
+            {
+            	
+            }
+        }
+        #endregion
+
+        #region 公共方法
+        /// <summary>
+        /// 根据配置创建新的SQLExecutor
+        /// </summary>
+        /// <returns>相应的SQLExecutor对象</returns>
+        public object CreateNewSQLExecutor()
+        {
+            // 打桩，数据库类型应当去配置文件中读取
+            string DBType = "MySQL";
+            // 打桩，通用的命名空间前缀也应当去配置文件中读取
+            string NameSpacePrefix = "ParadiseHome.DAL";
+            // 如果所有运行dll都在同一目录下面则可以直接由上述两个属性生成
+            string DllFileName = NameSpacePrefix + "." + DBType + ".dll";
+
+            Object obj = null;
+            try
+            {
+                Assembly asm = Assembly.LoadFile(DllFileName);
+                obj = asm.CreateInstance(NameSpacePrefix + "." + DBType
+                    + ".SQLExecutor", true);
+            }
+            catch
+            {
+            	
+            }
+            return obj;
         }
         #endregion
     }

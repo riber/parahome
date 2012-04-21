@@ -101,7 +101,9 @@
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="SQLConfig.xml" />
+    <Resource Include="SQLConfig.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
