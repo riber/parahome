@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("ParadiseHome")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ZTE")]
+[assembly: AssemblyCompany("CLS")]
 [assembly: AssemblyProduct("ParadiseHome")]
-[assembly: AssemblyCopyright("Copyright © ZTE 2012")]
+[assembly: AssemblyCopyright("Copyright © CLS 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

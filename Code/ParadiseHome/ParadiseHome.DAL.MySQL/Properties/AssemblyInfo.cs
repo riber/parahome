@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ParadiseHome.DLL")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ZTE")]
+[assembly: AssemblyCompany("CLS")]
 [assembly: AssemblyProduct("ParadiseHome.DLL")]
-[assembly: AssemblyCopyright("Copyright © ZTE 2012")]
+[assembly: AssemblyCopyright("Copyright © CLS 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
