@@ -1,0 +1,50 @@
+﻿<mypage:BasePage x:Class="ParadiseHome.Pages.DemoPage"
+      xmlns:mypage="clr-namespace:ParadiseHome.Pages"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="600"
+	Title="DemoPage" Loaded="BasePage_Loaded">
+
+    <Grid>
+        <TabControl Grid.Column="2" Opacity="0.8">
+            <TabControl.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE8E6E6" Offset="0" />
+                    <GradientStop Color="#FFF5BFBF" Offset="1" />
+                </LinearGradientBrush>
+            </TabControl.Background>
+            <TabItem Header="标签页1">
+                <StackPanel Name="stackPanel1">
+                    <TextBlock Foreground="DarkBlue" TextAlignment="Left" FontSize="18" TextWrapping="Wrap">示例页面。所有页面均应继承与BasePage类。</TextBlock>
+                    <Border BorderBrush="Silver" BorderThickness="1" Height="30" Name="border1">
+                        <Button Content="Button" Height="23" Name="button1" Width="75" />
+                    </Border>
+                    <CheckBox Content="CheckBox" Height="16" Name="checkBox1" />
+                    <Expander Header="expander1" Height="50" Name="expander1" ExpandDirection="Left">
+                        <Grid >
+                            <TextBlock Text="仅仅是用来测试，看看一些样式的显示效果。" />
+                        </Grid>
+                    </Expander>
+                    <Slider />
+                    <ComboBox>
+                        <ComboBoxItem Content="Item 1" />
+                        <ComboBoxItem Content="Item 2" />
+                        <ComboBoxItem Content="Item 3" />
+                    </ComboBox>
+                    <ProgressBar Height="30" Name="progressBar1" Width="200" Value="58" />
+                </StackPanel>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="标签页2"></TextBlock>
+                        <Button Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">×</Button>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</mypage:BasePage>

@@ -1,4 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
+    <ImageBrush x:Key="WindowBackgroudImg" ImageSource="/ParadiseHome;component/Images/CN-wp1.jpg" Stretch="Fill" TileMode="None" />
+    <Style x:Key="MainWinStyle" TargetType="Window">
+        <Setter Property="Background" Value="{StaticResource ResourceKey=WindowBackgroudImg}" />
+        <Setter Property="WindowStyle" Value="ThreeDBorderWindow" />
+    </Style>
 </ResourceDictionary>
