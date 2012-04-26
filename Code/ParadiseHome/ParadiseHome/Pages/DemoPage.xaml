@@ -6,7 +6,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="400" d:DesignWidth="600"
-	Title="DemoPage" Loaded="BasePage_Loaded">
+	Title="DemoPage" >
 
     <Grid>
         <TabControl Grid.Column="2" Opacity="0.8">
@@ -36,14 +36,6 @@
                     </ComboBox>
                     <ProgressBar Height="30" Name="progressBar1" Width="200" Value="58" />
                 </StackPanel>
-            </TabItem>
-            <TabItem>
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="标签页2"></TextBlock>
-                        <Button Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">×</Button>
-                    </StackPanel>
-                </TabItem.Header>
             </TabItem>
         </TabControl>
     </Grid>

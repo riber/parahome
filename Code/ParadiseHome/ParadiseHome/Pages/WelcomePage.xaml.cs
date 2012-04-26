@@ -15,14 +15,13 @@ using System.Windows.Shapes;
 namespace ParadiseHome.Pages
 {
     /// <summary>
-    /// Page1.xaml 的交互逻辑
+    /// WelcomePage.xaml 的交互逻辑
     /// </summary>
-    public partial class DemoPage : BasePage
+    public partial class WelcomePage : Page
     {
-        public DemoPage()
+        public WelcomePage()
         {
             InitializeComponent();
         }
-
     }
 }
