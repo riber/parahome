@@ -16,7 +16,7 @@ namespace ParadiseHome.Common.Model.Basic
 	/// <summary>
 	/// 实体 系统配置表
 	/// </summary>
-	[Description("Primary:ID")]
+    [Description("Primary:ID;TableName:am_sysconfig")]
     [Serializable]
 	public partial class Sysconfig
 	{

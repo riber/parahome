@@ -16,7 +16,7 @@ namespace ParadiseHome.Common.Model.Basic
 	/// <summary>
 	/// 实体 居士或者介绍人
 	/// </summary>
-	[Description("Primary:ID")]
+    [Description("Primary:ID;TableName:bm_introducer")]
     [Serializable]
 	public partial class Introducer
 	{

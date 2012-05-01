@@ -24,15 +24,5 @@ namespace ParadiseHome.Pages
             InitializeComponent();
         }
 
-        private void BasePage_Loaded(object sender, RoutedEventArgs e)
-        {
-            this.ParentWindow.ShowStatusMessage("获取主窗口对象了。");
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Clicked!");
-        }
     }
 }

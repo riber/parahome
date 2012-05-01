@@ -16,7 +16,7 @@ namespace ParadiseHome.Common.Model.Basic
 	/// <summary>
 	/// 实体 用户权限关系表
 	/// </summary>
-	[Description("Primary:ID")]
+    [Description("Primary:ID;TableName:af_user_auth")]
     [Serializable]
 	public partial class UserAuth
 	{

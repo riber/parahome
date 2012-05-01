@@ -1,7 +1,12 @@
 ﻿<Window x:Class="ParadiseHome.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525" Style="{StaticResource ResourceKey=MainWinStyle}" Opacity="0.9">
+        Title="MainWindow" Style="{StaticResource ResourceKey=MainWinStyle}" Opacity="0.9">
+    <Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="更换主题" Name="miChangeStyle" Click="miChangeStyle_Click" />
+        </ContextMenu>
+    </Window.ContextMenu>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
@@ -11,15 +16,21 @@
         </Grid.RowDefinitions>
         <Grid x:Name="headerGrid">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
                 <ColumnDefinition />
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
-            <WrapPanel Name="wrapPanel1" >
-                <Button Name="button2" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Tag="Pages/DemoPage.xaml" Click="NavButton_Click">
+            <TextBlock Text="Logo" TextAlignment="Center" FontSize="36" Foreground="Crimson"><TextBlock.Background><LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0"><GradientStop Color="#FFFAF6F3" Offset="0" /><GradientStop Color="#FFDD996A" Offset="1" /></LinearGradientBrush></TextBlock.Background></TextBlock>
+            <WrapPanel Name="wrapPanel1" Grid.Column="1">
+                <!--要实现正确导航，需满足两个条件：1.Button的Click事件置为统一的“NavButton_Click”
+                    2.控件的Tag属性设置所需信息，格式为：目标控件完整类名;TabItem的标题名
+                    其中，目标控件目前必须位于本程序集中。
+                -->
+                <Button Name="button2" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Tag="ParadiseHome.Pages.DemoPage;示例一" Click="NavButton_Click">
                     <Image Source="/ParadiseHome;component/Images/chinaz1.ico" ToolTip="Tooltip提示信息1"></Image>
                 </Button>
-                <Button Name="button3" Background="{x:Null}" >
-                    <Image Source="/ParadiseHome;component/Images/chinaz2.ico"></Image>
+                <Button Name="button3" Background="{x:Null}" Click="button3_Click">
+                    <Image Source="/ParadiseHome;component/Images/SysSetting.png"></Image>
                 </Button>
             </WrapPanel>
         </Grid>
@@ -37,13 +48,7 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid Width="150" Name="leftMenuContainerGrid" Opacity="0.8">
-                <TreeView Name="treeView1" Width="150" Opacity="0.8">
-                    <TreeView.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFE8E6E6" Offset="0" />
-                            <GradientStop Color="#FFF5BFBF" Offset="1" />
-                        </LinearGradientBrush>
-                    </TreeView.Background>
+                <TreeView Name="treeView1" Width="150" Opacity="0.8" Background="{StaticResource ControlBackground}">
                     <TreeViewItem>
                         <TreeViewItem.Header>
                             <Grid>
@@ -61,8 +66,11 @@
                                 <GradientStop Color="#FFD1F0ED" Offset="1" />
                             </LinearGradientBrush>
                         </TreeViewItem.Background>
-                        <TreeViewItem Header="子菜单1" />
-                        <TreeViewItem Header="子菜单2" />
+                        <!--树控件项导航示例-->
+                        <TreeViewItem Header="示例一" Tag="ParadiseHome.Pages.DemoPage;示例一" KeyUp="TreeViewItem_KeyUp" MouseLeftButtonUp="TreeViewItem_MouseLeftButtonUp" />
+                        <TreeViewItem Header="子菜单2" Tag="ParadiseHome.Pages.Error;错误地址" KeyUp="TreeViewItem_KeyUp" MouseLeftButtonUp="TreeViewItem_MouseLeftButtonUp"  />
+                        <!--正式项目页面-->
+                        <TreeViewItem Header="位置类型编辑" Tag="ParadiseHome.Pages.LocationTypePage;位置类型编辑" KeyUp="TreeViewItem_KeyUp" MouseLeftButtonUp="TreeViewItem_MouseLeftButtonUp" />
                     </TreeViewItem>
                     <TreeViewItem Header="22222222222" />
                 </TreeView>
@@ -73,9 +81,11 @@
                     <Image Name="imgRight" Source="/ParadiseHome;component/Images/right_arrow.png" Visibility="Collapsed" ToolTip="显示导航栏"></Image>
                 </Grid>
             </Button>
-            <Frame x:Name="mainFrame" Navigated="mainFrame_Navigated" Grid.Column="2">
-
-            </Frame>
+            <TabControl x:Name="tcMainContent" Grid.Column="2" Background="{StaticResource ControlBackground}">
+                <TabItem Header="Welcome" Tag="ParadiseHome.Pages.WelcomePage">
+                    <Frame Source="Pages/WelcomePage.xaml" />
+                </TabItem>
+            </TabControl>
         </Grid>
 
 

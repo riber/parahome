@@ -16,7 +16,7 @@ namespace ParadiseHome.Common.Model.Basic
 	/// <summary>
 	/// 实体 转赠记录表
 	/// </summary>
-	[Description("Primary:ID")]
+    [Description("Primary:ID;TableName:bf_transferlog")]
     [Serializable]
 	public partial class Transferlog
 	{

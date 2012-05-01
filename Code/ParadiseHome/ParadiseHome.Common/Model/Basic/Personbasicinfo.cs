@@ -16,7 +16,7 @@ namespace ParadiseHome.Common.Model.Basic
 	/// <summary>
 	/// 实体 人员基本信息
 	/// </summary>
-	[Description("Primary:ID")]
+    [Description("Primary:ID;TableName:bm_personbasicinfo")]
     [Serializable]
 	public partial class Personbasicinfo
 	{

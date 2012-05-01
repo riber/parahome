@@ -16,7 +16,7 @@ namespace ParadiseHome.Common.Model.Basic
 	/// <summary>
 	/// 实体 入住记录表
 	/// </summary>
-	[Description("Primary:ID")]
+    [Description("Primary:ID;TableName:bf_checkinlog")]
     [Serializable]
 	public partial class Checkinlog
 	{

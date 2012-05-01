@@ -10,13 +10,14 @@ using System;
 using System.Collections;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using ParadiseHome.Common.Utils;
 
 namespace ParadiseHome.Common.Model.Basic
 {
 	/// <summary>
 	/// 实体 福位或者住所
 	/// </summary>
-	[Description("Primary:ID")]
+    [Description("Primary:ID;TableName:bm_cell")]
     [Serializable]
 	public partial class Cell
 	{
@@ -35,7 +36,7 @@ namespace ParadiseHome.Common.Model.Basic
         private int _y = int.MinValue;
         private int _z = int.MinValue;
         private float _currentprice = float.MinValue;
-        private string _state = null;
+        private CellState _state = CellState.Default;
         private string _comment = null;
         #endregion
 
@@ -90,7 +91,7 @@ namespace ParadiseHome.Common.Model.Basic
         /// <summary>
         /// 福位所处的状态
         /// </summary>
-        public string State
+        public CellState State
         {
             set{ _state=value;}
             get{return _state;}

@@ -1,6 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?> 
 <!--SQL语句配置文件-->
 <root>
-	<item key="键名" value="" description="" /> 
-  <item key="ReadAllUsers" value="select * from am_user" description="" />
+	<item key="键名" value="" description="示例" /> 
+  <item key="ReadAllUsers" value="select * from am_user" description="读取所有系统用户列表" />
+  <!--带参数的SQL语句示例-->
+  <item key="ResetAllBeforeInsert" value="update bm_locationtype set LocationDepth = LocationDepth + 1 where LocationDepth > @POS" 
+        description="插入结点前重置一切"/>
+  <item key="ResetAllAfterDelete" value="update bm_locationtype set LocationDepth = LocationDepth - 1 where LocationDepth > @POS"
+        description="删除结点后重置一切"/>
 </root>

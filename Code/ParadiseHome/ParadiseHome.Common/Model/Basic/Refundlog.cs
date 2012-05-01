@@ -16,7 +16,7 @@ namespace ParadiseHome.Common.Model.Basic
 	/// <summary>
 	/// 实体 退款记录表
 	/// </summary>
-	[Description("Primary:ID")]
+    [Description("Primary:ID;TableName:bf_refundlog")]
     [Serializable]
 	public partial class Refundlog
 	{

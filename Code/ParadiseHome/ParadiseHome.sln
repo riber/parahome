@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParadiseHome", "ParadiseHome\ParadiseHome.csproj", "{82DA6582-83EC-4FD1-ACDA-4C89D27BAB8C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A931C53C-6D2D-4278-948B-527CCB1C6D11} = {A931C53C-6D2D-4278-948B-527CCB1C6D11}
+		{67E2C684-FE8C-4AD7-8467-0C8A75D38337} = {67E2C684-FE8C-4AD7-8467-0C8A75D38337}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParadiseHome.BLL", "ParadiseHome.BLL\ParadiseHome.BLL.csproj", "{147EF0FB-9576-42D5-BE10-01F220E6AC6D}"
 EndProject

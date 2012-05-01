@@ -16,7 +16,7 @@ namespace ParadiseHome.Common.Model.Basic
 	/// <summary>
 	/// 实体 用户信息表
 	/// </summary>
-	[Description("Primary:ID")]
+    [Description("Primary:ID;TableName:am_user")]
     [Serializable]
 	public partial class User
 	{

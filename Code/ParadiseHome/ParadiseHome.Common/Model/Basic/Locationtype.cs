@@ -16,9 +16,9 @@ namespace ParadiseHome.Common.Model.Basic
 	/// <summary>
 	/// 实体 位置类型信息表
 	/// </summary>
-	[Description("Primary:ID")]
+    [Description("Primary:ID;TableName:bm_locationtype")]
     [Serializable]
-	public partial class Locationtype
+	public partial class Locationtype : IComparable
 	{
         #region 构造函数
         /// <summary>
@@ -28,8 +28,8 @@ namespace ParadiseHome.Common.Model.Basic
         #endregion
 
         #region 私有变量
-        private long _id = long.MinValue;
-        private long _locationdepth = long.MinValue;
+        private long _id = 0;
+        private long _locationdepth = 0;
         private string _typename = null;
         private string _comment = null;
         private string _locationtypecol = null;
@@ -75,6 +75,23 @@ namespace ParadiseHome.Common.Model.Basic
         {
             set{ _locationtypecol=value;}
             get{return _locationtypecol;}
+        }
+        #endregion
+
+        #region  实现比较接口的CompareTo方法
+        public int CompareTo(object obj)
+        {
+            int res = 0;
+            Locationtype compareEntity = obj as Locationtype;
+            if (this.LocationDepth > compareEntity.LocationDepth)
+            {
+                res = 1;
+            }
+            else if (this.LocationDepth < compareEntity.LocationDepth)
+            {
+                res = -1;
+            }
+            return res;
         }
         #endregion
 	}

@@ -37,8 +37,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.4.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Luna" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -47,18 +51,44 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\CellEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CellEditorDefaultHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TextBlockShape.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ThemeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\DemoPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\LocationTypePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WelcomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\GenericStyle.xaml">
       <SubType>Designer</SubType>
@@ -72,6 +102,31 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controls\Arrow.cs" />
+    <Compile Include="Controls\TextBlockShape.xaml.cs">
+      <DependentUpon>TextBlockShape.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CellEditor.xaml.cs">
+      <DependentUpon>CellEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CellEditorDefaultHeader.xaml.cs">
+      <DependentUpon>CellEditorDefaultHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WinFormControls\ColorComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WinFormControls\ColorComboBox.designer.cs">
+      <DependentUpon>ColorComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ThemeWindow.xaml.cs">
+      <DependentUpon>ThemeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WinFormControls\SysSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\WinFormControls\SysSettingForm.Designer.cs">
+      <DependentUpon>SysSettingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -81,6 +136,12 @@
     <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Pages\DemoPage.xaml.cs">
       <DependentUpon>DemoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LocationTypePage.xaml.cs">
+      <DependentUpon>LocationTypePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WelcomePage.xaml.cs">
+      <DependentUpon>WelcomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -95,6 +156,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Controls\WinFormControls\ColorComboBox.resx">
+      <DependentUpon>ColorComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WinFormControls\SysSettingForm.resx">
+      <DependentUpon>SysSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -106,7 +173,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\" />
+    <None Include="SQLConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Resource Include="Images\SysSetting.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="SQLConfig.xml">
@@ -123,6 +193,10 @@
     <Resource Include="Images\right_arrow.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ParadiseHome.BLL\ParadiseHome.BLL.csproj">
+      <Project>{147EF0FB-9576-42D5-BE10-01F220E6AC6D}</Project>
+      <Name>ParadiseHome.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ParadiseHome.Common\ParadiseHome.Common.csproj">
       <Project>{C7932ABB-ED3A-497B-8317-7638291EE3E0}</Project>
       <Name>ParadiseHome.Common</Name>

@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Data;
+using ParadiseHome.Common.Model.Basic;
+using System.Collections.Generic;
 
 namespace UnitTest
 {
@@ -79,6 +81,46 @@ namespace UnitTest
             sql = "select * from am_user";
 
             actual = target.Execute(sql);
+
+            //sql = @"insert into bm_locationtype values(0,@LocationDepth,@TypeName,@Comment,@locationtypecol)";
+            ////sql = @"delete from bm_locationtype;";
+            //Locationtype lt = new Locationtype
+            //{
+            //    LocationDepth=0,
+            //    TypeName = "level0",
+            //    Comment = "test",
+            //    locationtypecol = "test"
+            //};
+            //int effectrow = target.ExecuteNonQuery(sql, new List<object> { lt.LocationDepth, lt.TypeName, lt.Comment, lt.locationtypecol });
+            ////int effectrow = target.ExecuteNonQuery(sql);
+
+            Assert.AreEqual("", "");
+            Assert.Inconclusive("验证此测试方法的正确性。");
+        }
+
+                /// <summary>
+        ///Execute 的测试
+        ///</summary>
+        [TestMethod()]
+        public void InsertTest()
+        {
+            
+            List<object> lts = new List<object>();
+            for (int i = 0; i < 5; i++ )
+            {
+                Locationtype lt = new Locationtype
+                {
+                    Comment = "test",
+                    locationtypecol = "test"
+                };
+                lt.LocationDepth = i;
+                lt.TypeName = "level" + i.ToString();
+                lts.Add(lt);
+            }
+
+            SQLExecutor target = new SQLExecutor(); // TODO: 初始化为适当的值
+            target.Insert(typeof(Locationtype), lts);
+
             Assert.AreEqual("", "");
             Assert.Inconclusive("验证此测试方法的正确性。");
         }

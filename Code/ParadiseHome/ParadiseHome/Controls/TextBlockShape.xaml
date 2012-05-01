@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="ParadiseHome.Controls.TextBlockShape"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Width="150" Height="30" FontSize="20" MouseEnter="UserControl_MouseEnter" MouseLeave="UserControl_MouseLeave">
+    <Grid Width="150" Height="30">
+        <Rectangle Width="150" Height="30" RadiusX="10" RadiusY="10" StrokeThickness="2" Stroke="#FFC1B0B0" Name="rtMain">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF216464" Offset="0" />
+                    <GradientStop Color="#FFBBE0D5" Offset="1" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock Name="TextContent" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+    </Grid>
+</UserControl>

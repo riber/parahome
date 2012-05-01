@@ -1,0 +1,102 @@
+﻿<mypage:BasePage x:Class="ParadiseHome.Pages.LocationTypePage"
+      xmlns:mypage="clr-namespace:ParadiseHome.Pages"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:shapes="clr-namespace:ParadiseHome.Controls"
+      mc:Ignorable="d" 
+       d:DesignHeight="400" d:DesignWidth="600"
+	Title="LocationTypePage">
+
+    <Grid Name="gMain">
+        <Grid.Resources>
+            <Storyboard x:Key="sbHideEditCol">
+                <ObjectAnimationUsingKeyFrames 
+                BeginTime="0" Duration="00:00:00.1500000"
+                Storyboard.TargetName="EditColDef" Storyboard.TargetProperty="Width">
+                    <DiscreteObjectKeyFrame KeyTime="0">
+                        <DiscreteObjectKeyFrame.Value>
+                            <GridLength>3*</GridLength>
+                        </DiscreteObjectKeyFrame.Value>
+                    </DiscreteObjectKeyFrame>
+                    <DiscreteObjectKeyFrame KeyTime="00:00:00.0500000">
+                        <DiscreteObjectKeyFrame.Value>
+                            <GridLength>2*</GridLength>
+                        </DiscreteObjectKeyFrame.Value>
+                    </DiscreteObjectKeyFrame>
+                    <DiscreteObjectKeyFrame KeyTime="00:00:00.1000000">
+                        <DiscreteObjectKeyFrame.Value>
+                            <GridLength>1*</GridLength>
+                        </DiscreteObjectKeyFrame.Value>
+                    </DiscreteObjectKeyFrame>
+                    <DiscreteObjectKeyFrame KeyTime="00:00:00.1500000">
+                        <DiscreteObjectKeyFrame.Value>
+                            <GridLength>0</GridLength>
+                        </DiscreteObjectKeyFrame.Value>
+                    </DiscreteObjectKeyFrame>
+                </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="sbShowEditCol">
+                <ObjectAnimationUsingKeyFrames 
+                BeginTime="0" Duration="00:00:00.1500000"
+                Storyboard.TargetName="EditColDef" Storyboard.TargetProperty="Width">
+                    <DiscreteObjectKeyFrame KeyTime="0">
+                        <DiscreteObjectKeyFrame.Value>
+                            <GridLength>0</GridLength>
+                        </DiscreteObjectKeyFrame.Value>
+                    </DiscreteObjectKeyFrame>
+                    <DiscreteObjectKeyFrame KeyTime="00:00:00.0500000">
+                        <DiscreteObjectKeyFrame.Value>
+                            <GridLength>1*</GridLength>
+                        </DiscreteObjectKeyFrame.Value>
+                    </DiscreteObjectKeyFrame>
+                    <DiscreteObjectKeyFrame KeyTime="00:00:00.1000000">
+                        <DiscreteObjectKeyFrame.Value>
+                            <GridLength>2*</GridLength>
+                        </DiscreteObjectKeyFrame.Value>
+                    </DiscreteObjectKeyFrame>
+                    <DiscreteObjectKeyFrame KeyTime="00:00:00.1500000">
+                        <DiscreteObjectKeyFrame.Value>
+                            <GridLength>3*</GridLength>
+                        </DiscreteObjectKeyFrame.Value>
+                    </DiscreteObjectKeyFrame>
+                </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="0" Name="EditColDef"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column ="0" Name="gView">
+            <Grid.ContextMenu>
+                <ContextMenu Name="cmMainContainer">
+                    <MenuItem Header="添加位置类型节点" Name="miInitialAddNode" Click="miInitialAddNode_Click"></MenuItem>
+                </ContextMenu>
+            </Grid.ContextMenu>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" Width="{Binding ElementName=gView, Path=ActualWidth}">
+                <StackPanel Name="spContainer" Orientation="Vertical">
+                    <!--<shapes:TextBlockShape></shapes:TextBlockShape>
+                    <shapes:Arrow X1="5" Y1="0" X2="5" Y2="30" HeadWidth="15" HeadHeight="5" Stroke="#FF3F6D66" StrokeThickness="2.0" Width="10" />-->
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="5" ShowsPreview="True" IsEnabled="False" />
+        <Grid Grid.Column ="2" Name="gEdit">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Name="tbCurrentTitle" Text="未操作" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" />
+            <TextBlock Grid.Row="1"  Text="名称：" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" />
+            <TextBox Grid.Row="1" Name="txtName" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="60,0,20,0" />
+            <TextBlock Grid.Row="2"  Text="说明：" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" />
+            <TextBox Grid.Row="2" Name="txtComment" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="60,0,20,0" />
+            <Button Grid.Row="3" Content="确定" Width="70" Height="24" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,90,0" Name="btnOK" Click="btnOK_Click"></Button>
+            <Button Grid.Row="3" Content="取消" Width="70" Height="24" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" Name="btnCancel" Click="btnCancel_Click"></Button>
+        </Grid>
+    </Grid>
+</mypage:BasePage>

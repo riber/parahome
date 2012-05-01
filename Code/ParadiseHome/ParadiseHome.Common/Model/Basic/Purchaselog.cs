@@ -16,7 +16,7 @@ namespace ParadiseHome.Common.Model.Basic
 	/// <summary>
 	/// 实体 购买或者捐赠或者预定记录表
 	/// </summary>
-	[Description("Primary:ID")]
+    [Description("Primary:ID;TableName:bf_purchaselog")]
     [Serializable]
 	public partial class Purchaselog
 	{

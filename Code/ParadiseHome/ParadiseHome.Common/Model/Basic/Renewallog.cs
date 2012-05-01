@@ -16,7 +16,7 @@ namespace ParadiseHome.Common.Model.Basic
 	/// <summary>
 	/// 实体 续费记录表
 	/// </summary>
-	[Description("Primary:ID")]
+    [Description("Primary:ID;TableName:bf_renewallog")]
     [Serializable]
 	public partial class Renewallog
 	{
