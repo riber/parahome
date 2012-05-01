@@ -173,15 +173,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="SQLConfig.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <Resource Include="Images\SysSetting.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="SQLConfig.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\chinaz1.ico" />
@@ -201,6 +193,11 @@
       <Project>{C7932ABB-ED3A-497B-8317-7638291EE3E0}</Project>
       <Name>ParadiseHome.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SQLConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
