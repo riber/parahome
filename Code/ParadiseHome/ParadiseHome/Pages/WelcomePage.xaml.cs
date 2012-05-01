@@ -1,4 +1,4 @@
-ï»¿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +18,7 @@ using ParadiseHome.Common.Utils;
 namespace ParadiseHome.Pages
 {
     /// <summary>
-    /// WelcomePage.xaml çš„äº¤äº’é€»è¾‘
+    /// WelcomePage.xaml µÄ½»»¥Âß¼­
     /// </summary>
     public partial class WelcomePage : Page
     {
@@ -48,8 +48,8 @@ namespace ParadiseHome.Pages
             {
                 this.cellEditor1.FillDatas(datas);
                 CellEditorDefaultHeader header = new CellEditorDefaultHeader();
-                header.Header1 = "ç¦æ»¡å ‚";
-                header.Header2 = "ç¬¬ä¸€æ’";
+                header.Header1 = "¸£ÂúÌÃ";
+                header.Header2 = "µÚÒ»ÅÅ";
                 this.cellEditor1.Header = header;
             }
             catch (Exception ex)

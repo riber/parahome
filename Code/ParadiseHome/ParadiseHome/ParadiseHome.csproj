@@ -172,6 +172,7 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\SysSetting.png" />
   </ItemGroup>

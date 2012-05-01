@@ -1,4 +1,4 @@
-ï»¿<Page x:Class="ParadiseHome.Pages.WelcomePage"
+<Page x:Class="ParadiseHome.Pages.WelcomePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,7 +8,7 @@
 	Title="WelcomePage" xmlns:my="clr-namespace:ParadiseHome.Controls">
 
     <Grid>
-        <TextBlock Name="textBlock1" TextAlignment="Center" Text="æ¬¢è¿Žé¡µé¢ã€‚å›ºå®šï¼Œä¸å…³é—­ã€‚" FontSize="32" TextWrapping="Wrap" />
+        <TextBlock Name="textBlock1" TextAlignment="Center" Text="»¶Ó­Ò³Ãæ¡£¹Ì¶¨£¬²»¹Ø±Õ¡£" FontSize="32" TextWrapping="Wrap" />
         <my:CellEditor Margin="0,92,0,0" x:Name="cellEditor1">
         </my:CellEditor>
     </Grid>
